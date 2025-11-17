@@ -61,7 +61,7 @@ function renderBooks(containerId, list) {
 
 // Chuyển sang trang chi tiết sách
 function openDetail(id) {
-    window.location.href = `./detail.html?id=${id}`;
+    window.location.href = `../Chitiet/detail.html?id=${id}`;
 }
 
 loadBooks();

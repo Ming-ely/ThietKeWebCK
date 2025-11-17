@@ -28,7 +28,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
         localStorage.setItem("username", data.data.username);
   
         setTimeout(() => {
-          window.location.href = "../Trangchu.html";
+          window.location.href = "../Trangchu/Trangchu.html";
         }, 1000);
       } else {
         message.textContent = data.message || "Đăng nhập thất bại!";

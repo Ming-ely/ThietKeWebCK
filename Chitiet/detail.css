@@ -2,38 +2,45 @@
   display: flex;
   padding: 20px;
   gap: 30px;
+  flex-wrap: wrap; /* Cho phép xuống dòng nếu cần */
 }
 
 .detail-left {
-  flex: 1;
+  flex: 1 1 100%; /* Chiếm toàn bộ chiều ngang */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding-top: 20px;
 }
 
 .detail-left img {
-  max-width: 80%;
-  border-radius: 10px;
+  width: 100%;               /* ảnh chiếm toàn bộ chiều rộng khung bên trái */
+  max-width: 350px;          /* giới hạn kích thước tối đa */
+  height: auto;              /* giữ tỷ lệ ảnh */
+  border-radius: 12px;
   border: 1px solid #ccc;
-  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* thêm bóng nhẹ */
+  margin-bottom: 25px;
 }
 
 .detail-left button {
-  padding: 12px 24px;
+  padding: 16px 32px;        /* tăng kích thước nút */
   background: #ff6600;
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
-  transition: 0.2s;
+  font-size: 18px;           /* chữ to hơn */
+  font-weight: bold;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* thêm bóng cho nút */
 }
 
 .detail-left button:hover {
   background: #e05500;
 }
+
 
 
 .detail-scroll {

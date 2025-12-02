@@ -1,0 +1,101 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* FORM ĐĂNG KÝ */
+.register-container {
+    background: white;
+    padding: 30px;
+    width: 380px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* INPUT GROUP */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #444;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #4facfe;
+}
+
+/* BUTTON */
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4facfe;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 5px;
+}
+
+.btn:hover {
+    background-color: #0084ff;
+}
+
+/* LINK CHUYỂN TRANG */
+.switch {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #444;
+}
+
+.switch a {
+    color: #4facfe;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.switch a:hover {
+    color: #0084ff;
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    .register-container {
+        width: 90%;
+        padding: 25px;
+    }
+}

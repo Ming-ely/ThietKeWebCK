@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore - Trang bán sách</title>
+    <link rel="stylesheet" href="Trangchu.css">
+</head>
+<body>
+
+    <header>
+        <h1>BookStore</h1>
+        <nav>
+            <a href="Trangchu.html">Trang chủ</a>
+           
+            <a href="../Giohang/cart.html" id="cartLink">Giỏ hàng</a>
+
+            <a href="../loginregister/login.html" id="loginBtn">Đăng nhập</a>
+            <a href="../loginregister/register.html" id="registerBtn">Đăng ký</a>
+
+            <span id="userInfo" style="display:none; font-weight:bold; color:white;">
+                👤 Xin chào, <span id="nameDisplay"></span>!
+            </span>
+
+            <a href="#" id="logoutBtn" style="display:none; margin-left:10px; color:yellow; font-weight:bold;">
+                Đăng xuất
+            </a>
+        </nav>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Tìm kiếm sách, tác giả, thể loại...">
+        <button>Tìm kiếm</button>
+        <button id="menu-btn" class="menu-btn">☰</button>
+    </div>
+
+    <div id="mega-menu" class="mega-menu">
+        <h2>📚 Danh mục sách</h2>
+        <div class="mega-content">
+            <div class="mega-col">
+                <h3>📘 Sách Kinh Tế</h3>
+                <a href="../Danhmuc/category.html?type=kinh-te">Nhân vật - Bài học kinh doanh</a>
+                <a href="../Danhmuc/category.html?type=kinh-te">Quản trị - Lãnh đạo</a>
+                <a href="../Danhmuc/category.html?type=kinh-te">Marketing - Bán hàng</a>
+                <a href="../Danhmuc/category.html?type=kinh-te">Phân tích kinh tế</a>
+            </div>
+
+            <div class="mega-col">
+                <h3>📙 Kỹ Năng Sống</h3>
+                <a href="../Danhmuc/category.html?type=ky-nang">Tư duy tích cực</a>
+                <a href="../Danhmuc/category.html?type=ky-nang">Giao tiếp - Ứng xử</a>
+                <a href="../Danhmuc/category.html?type=ky-nang">Quản lý thời gian</a>
+            </div>
+            
+            <div class="mega-col">
+                <h3>📗 Phát Triển Bản Thân</h3>
+                <a href="../Danhmuc/category.html?type=phat-trien">Tư duy phản biện</a>
+                <a href="../Danhmuc/category.html?type=phat-trien">Thành công</a>
+                <a href="../Danhmuc/category.html?type=phat-trien">Khởi nghiệp</a>
+            </div>
+
+            <div class="mega-col">
+                <h3>📕 Khác</h3>
+                <a href="../Danhmuc/category.html?type=tam-ly">Tâm Lý</a>
+                <a href="../Danhmuc/category.html?type=van-hoc">Văn Học</a>
+                <a href="../Danhmuc/category.html?type=thieu-nhi">Thiếu Nhi</a>
+            </div>
+        </div>
+    </div>
+    <div id="menu-overlay"></div>
+
+    <main class="container">
+        <section class="banner-section">
+            <div class="banner-container">
+                <img src="images/banner1.webp" class="banner active" alt="Banner 1">
+                <img src="images/banner2.webp" class="banner" alt="Banner 2">
+                <img src="images/banner3.webp" class="banner" alt="Banner 3">
+            </div>
+            <button class="banner-btn prev" onclick="moveBanner(-1)">❮</button>
+            <button class="banner-btn next" onclick="moveBanner(1)">❯</button>
+        </section>
+
+        <section class="book-section flash-sale">
+            <h2>🔥 Flash Sale Hôm Nay</h2>
+            <div id="flash-sale-grid" class="book-grid">
+                </div>
+        </section>
+
+        <section class="book-section featured-books">
+            <h2>⭐ Sách Nổi Bật</h2>
+            <div id="featured-books-grid" class="book-grid">
+                </div>
+        </section>
+
+        <section class="book-section suggest-books">
+            <h2>💡 Gợi Ý Cho Bạn</h2>
+            <div id="suggest-books-grid" class="book-grid">
+                </div>
+        </section>
+
+        <section class="book-section monthly-best">
+            <h2>🏆 Best Seller Tháng</h2>
+            <div id="monthly-best-grid" class="book-grid">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div><h3>BOOKSTORE</h3><p>Website bán sách hiện đại – nhanh – tiện lợi.</p></div>
+            <div><h4>Liên hệ</h4><p>Email: support@bookstore.vn</p><p>Hotline: 0123 456 789</p></div>
+            <div><h4>Follow chúng tôi</h4><p>Facebook</p><p>Zalo</p><p>TikTok</p></div>
+        </div>
+        <p class="copyright">© 2025 BookStore. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentBanner = 0;
+        const banners = document.querySelectorAll(".banner");
+
+        function moveBanner(direction) {
+            banners[currentBanner].classList.remove("active");
+            currentBanner = (currentBanner + direction + banners.length) % banners.length;
+            banners[currentBanner].classList.add("active");
+        }
+    </script>
+
+    <script src="Trangchu.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const token = localStorage.getItem("token");
+            const username = localStorage.getItem("username");
+
+            const loginBtn = document.getElementById("loginBtn");
+            const registerBtn = document.getElementById("registerBtn");
+
+            const userInfo = document.getElementById("userInfo");
+            const nameDisplay = document.getElementById("nameDisplay");
+
+            const logoutBtn = document.getElementById("logoutBtn");
+
+            // Nếu đã đăng nhập
+            if (token && username) {
+                loginBtn.style.display = "none";
+                registerBtn.style.display = "none";
+
+                userInfo.style.display = "inline-block";
+                nameDisplay.textContent = username;
+
+                logoutBtn.style.display = "inline-block";
+            }
+
+            // Xử lý đăng xuất
+            logoutBtn.addEventListener("click", function () {
+                localStorage.removeItem("token");
+                localStorage.removeItem("username");
+
+                window.location.reload();
+            });
+        });
+    </script>
+
+</body>
+</html>

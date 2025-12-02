@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết sách</title>
+  <link rel="stylesheet" href="../Trangchu/Trangchu.css">
+  <link rel="stylesheet" href="detail.css">
+</head>
+<body>
+
+  <header>
+    <h1>BookStore</h1>
+    <nav>
+      <a href="../Trangchu/Trangchu.html">Trang chủ</a>
+     
+      <a href="../Giohang/cart.html" id="cartLink">Giỏ hàng</a>
+
+      <a href="../loginregister/login.html">Đăng nhập</a>
+      <a href="../loginregister/register.html">Đăng ký</a>
+    </nav>
+  </header>
+
+  <main class="detail-container">
+    <div class="detail-left">
+      <img id="book-image" src="" alt="Ảnh sách">
+      <button id="add-to-cart">Thêm vào giỏ hàng</button>
+    </div>
+
+    <div class="detail-right">
+      <h2 id="book-title"></h2>
+      <p><strong>Tác giả:</strong> <span id="book-author"></span></p>
+      <p><strong>Giá:</strong> <span id="book-price"></span> VNĐ</p>
+      <p><strong>Đánh giá:</strong> <span id="book-rating"></span> ⭐</p>
+      <p><strong>Đã bán:</strong> <span id="book-sold"></span></p>
+      <p><strong>Mô tả ngắn:</strong> <span id="book-description"></span></p>
+      
+      <h3>Thông tin chi tiết</h3>
+      <div class="detail-scroll">
+        <p id="book-detail"></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>BOOKSTORE</h3>
+        <p>Website bán sách hiện đại – nhanh – tiện lợi.</p>
+      </div>
+
+      <div>
+        <h4>Liên hệ</h4>
+        <p>Email: support@bookstore.vn</p>
+        <p>Hotline: 0123 456 789</p>
+      </div>
+
+      <div>
+        <h4>Follow chúng tôi</h4>
+        <p>Facebook</p>
+        <p>Zalo</p>
+        <p>TikTok</p>
+      </div>
+    </div>
+
+    <p class="copyright">© 2025 BookStore. All rights reserved.</p>
+  </footer>
+
+  <script src="detail.js"></script>
+
+</body>
+</html>

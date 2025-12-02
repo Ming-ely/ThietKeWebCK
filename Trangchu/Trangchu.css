@@ -1,0 +1,549 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7ff;
+}
+
+/* HEADER */
+header {
+    background: #0a4fff;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* BANNER */
+.banner-section {
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-container {
+    display: flex;
+}
+
+.banner {
+    width: 100%;
+    display: none;
+    border-radius: 10px;
+}
+
+.banner.active {
+    display: block;
+}
+
+.banner-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.3);
+    border: none;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.banner-btn.left { left: 10px; }
+.banner-btn.right { right: 10px; }
+
+/* BOOK SECTIONS */
+.book-section {
+    margin: 25px 15px;
+}
+
+.book-section h2 {
+    margin-bottom: 10px;
+    color: #0a2c66;
+}
+
+/* Slider ngang */
+.book-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+.book-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.book-slider::-webkit-scrollbar-thumb {
+    background: #1e54d3;
+    border-radius: 5px;
+}
+
+/* ===================== */
+/* ẢNH SÁCH ĐỒNG ĐỀU KÍCH THƯỚC */
+/* ===================== */
+
+/* Book card chung */
+.book-card {
+    width: 220px;
+    background: #fff;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: .25s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ảnh sách */
+.book-card img,
+.book-card .book-img {
+    width: 100%;
+    height: 300px;       /* chiều cao cố định */
+    object-fit: cover;   /* giữ tỉ lệ, cắt phần thừa */
+    border-radius: 6px;
+    display: block;
+    margin-bottom: 10px; /* khoảng cách giữa ảnh và title */
+}
+
+/* Nếu muốn dùng wrapper */
+.book-card .img-wrapper {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.book-card .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text bên dưới ảnh (title, author, giá) */
+.book-card .title,
+.book-card .author,
+.book-card .book-price {
+    margin: 0 0 5px 0;
+    text-align: left;
+}
+
+
+/* FLASH SALE TAG */
+.sale-tag {
+    background: red;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 40px;
+    background: #0a4fff;
+    color: white;
+    padding: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer h4, footer h3 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+copyright {
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+}
+.book-card {
+    width: 220px;
+    background: #fff;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: .25s;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+}
+
+.book-img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.book-badges .tag-hot {
+    background: #ff4040;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.book-labels {
+    margin-top: 5px;
+}
+
+.label {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    margin-right: 4px;
+}
+
+.top-deal {
+    background: #fce5e5;
+    color: #d40000;
+}
+
+.auth {
+    background: #e0eeff;
+    color: #1877f2;
+}
+
+.book-price {
+    margin-top: 6px;
+}
+
+.new-price {
+    color: #ff2e2e;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.discount {
+    margin-left: 6px;
+    background: #efefef;
+    padding: 2px 6px;
+    font-size: 11px;
+    border-radius: 4px;
+}
+
+.author {
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: #777;
+}
+
+.title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.book-rating {
+    font-size: 13px;
+    color: #ffb600;
+}
+
+.book-extra .sub-tag {
+    background: #f3f3f3;
+    padding: 3px 6px;
+    font-size: 11px;
+    border-radius: 6px;
+}
+
+.book-promo .promo {
+    background: #e6f3ff;
+    color: #1877f2;
+    padding: 4px 6px;
+    border-radius: 6px;
+    font-size: 11px;
+    margin-right: 4px;
+    display: inline-block;
+}
+
+.book-fast .fast {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #ff3b3b;
+    font-weight: bold;
+}
+/* SEARCH BAR */
+.search-bar {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    width: 350px;
+    padding: 10px 14px;
+    border: 2px solid #1e73ff;
+    border-radius: 30px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.search-bar input:focus {
+    border-color: #0049c7;
+    box-shadow: 0 0 4px rgba(0,100,255,0.4);
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background: #1e73ff;
+    color: white;
+    font-size: 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.search-bar button:hover {
+    background: #0049c7;
+}
+/* Nút menu 3 gạch */
+.hamburger {
+    font-size: 28px;
+    background: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
+    color: #0a4fff;
+    font-weight: bold;
+    position: relative;
+    z-index: 9999; /* đảm bảo không bị che */
+}
+
+/* Menu trượt ẩn hoàn toàn */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;   /* ⬅ ẨN 100%, KHÔNG LÒI 1PX */
+    width: 260px;
+    height: 100%;
+    background: white;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+    padding: 25px;
+    transition: 0.3s ease;
+    z-index: 99999;
+}
+
+/* Khi mở */
+.side-menu.active {
+    right: 0;
+}
+
+.side-menu h2 {
+    margin-bottom: 15px;
+    color: #0a4fff;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu li {
+    margin: 12px 0;
+}
+
+.side-menu a {
+    color: #0a2c66;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.side-menu a:hover {
+    color: #1e54d3;
+}
+
+/* Đặt nút 3 gạch cạnh ô tìm kiếm */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.hamburger {
+    font-size: 26px;
+    background: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #0a4fff;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.hamburger:hover {
+    background: #e6edff;
+}
+/* GRID HIỂN THỊ SÁCH TRONG CATEGORY */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 cột trên PC */
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .book-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/* OVERLAY TỐI NỀN */
+#menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(1px);
+    display: none;
+    z-index: 9998;
+}
+
+.mega-menu {
+    position: fixed;
+    top: 0;
+    right: -1200px;   /* ẨN HOÀN TOÀN KHÔNG LÒI 1PX */
+    width: 900px;
+    height: 100%;
+    background: white;
+    box-shadow: -3px 0 15px rgba(0,0,0,0.2);
+    padding: 35px;
+    transition: 0.35s ease;
+    z-index: 9999;
+    overflow-y: auto;
+    border-radius: 12px 0 0 12px;
+}
+
+
+.mega-menu.active {
+    right: 0; /* Mở ra */
+}
+
+/* Nội dung menu */
+.mega-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.mega-col h3 {
+    font-size: 20px;
+    color: #0a4fff;
+    margin-bottom: 8px;
+}
+
+.mega-col a {
+    display: block;
+    color: #0b2c66;
+    font-size: 16px;
+    padding: 4px 0;
+}
+
+.mega-col a:hover {
+    color: #1e54d3;
+}
+/* HIỆN OVERLAY KHI MỞ MENU */
+#menu-overlay.active {
+    display: block;
+}
+/* ẨN NÚT 3 GẠCH KHI MỞ MENU */
+.hamburger.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+.mega-col a {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+.mega-menu h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #c62828; /* đỏ noel */
+    padding-bottom: 10px;
+    border-bottom: 3px solid #2e7d32; /* xanh lá noel */
+    margin-bottom: 25px;
+}
+.mega-col {
+    padding: 15px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border-left: 5px solid #c62828;  /* đỏ noel */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: 0.25s ease;
+}
+.mega-col:hover {
+    background: linear-gradient(135deg, #ffffff, #eef7ff);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+.mega-col:hover {
+    background: linear-gradient(135deg, #ffffff, #eef7ff);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+.mega-col h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    border-left: 4px solid #2e7d32; /* xanh lá */
+    color: #1a237e; /* xanh đậm dịu mắt */
+}
+.mega-col a {
+    font-size: 16px;
+    color: #0b2c66;
+    padding: 3px 0;
+    display: block;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.mega-col a:hover {
+    background: #ffe8e8;        /* đỏ nhạt noel */
+    color: #c62828;             /* đỏ noel */
+    padding-left: 6px;
+}
+.mega-col h3::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #c62828, #8e0000);
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+
+

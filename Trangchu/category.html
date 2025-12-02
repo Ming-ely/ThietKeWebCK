@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục sách</title>
+
+    <link rel="stylesheet" href="Trangchu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div id="menu-overlay"></div>
+
+<div id="mega-menu" class="mega-menu">
+
+    <h2>📚 Danh mục sách</h2>
+    <button id="close-menu-btn">X</button>
+
+    <div class="mega-content">
+
+        <div class="mega-col">
+            <h3>📘 Sách Kinh Tế</h3>
+            <a href="category.html?type=kinh-te">Nhân vật - Bài học kinh doanh</a>
+            <a href="category.html?type=kinh-te">Quản trị - Lãnh đạo</a>
+            <a href="category.html?type=kinh-te">Marketing - Bán hàng</a>
+            <a href="category.html?type=kinh-te">Phân tích kinh tế</a>
+        </div>
+
+        <div class="mega-col">
+            <h3>📙 Kỹ Năng Sống</h3>
+            <a href="category.html?type=ky-nang">Tư duy tích cực</a>
+            <a href="category.html?type=ky-nang">Giao tiếp - Ứng xử</a>
+            <a href="category.html?type=ky-nang">Quản lý thời gian</a>
+            <a href="category.html?type=ky-nang">Làm chủ cảm xúc</a>
+        </div>
+        
+        <div class="mega-col">
+            <h3>📗 Phát Triển Bản Thân</h3>
+            <a href="category.html?type=phat-trien">Tư duy - Khai sáng</a>
+            <a href="category.html?type=phat-trien">Tâm lý học</a>
+            <a href="category.html?type=phat-trien">Kỹ năng mềm</a>
+        </div>
+
+        <div class="mega-col">
+            <h3>📕 Sách Tâm Lý</h3>
+            <a href="category.html?type=tam-ly">Tâm lý học</a>
+            <a href="category.html?type=tam-ly">Sức khỏe tinh thần</a>
+            <a href="category.html?type=tam-ly">Tình yêu - Hôn nhân</a>
+        </div>
+        
+        <div class="mega-col">
+            <h3>📔 Sách Văn Học</h3>
+            <a href="category.html?type=van-hoc">Tiểu thuyết</a>
+            <a href="category.html?type=van-hoc">Truyện ngắn</a>
+            <a href="category.html?type=van-hoc">Thơ ca</a>
+        </div>
+        
+         <div class="mega-col">
+            <h3>🧒 Sách Thiếu Nhi</h3>
+            <a href="category.html?type=thieu-nhi">Sách truyện</a>
+            <a href="category.html?type=thieu-nhi">Sách giáo dục sớm</a>
+        </div>
+    </div>
+</div>
+
+<header>
+    <h1>BookStore</h1>
+    <nav>
+        <a href="../Trangchu/Trangchu.html">Trang chủ</a> 
+
+        <a href="../Giohang/cart.html" id="cartLink">Giỏ hàng</a> 
+
+        <a href="../loginregister/login.html" id="loginBtn">Đăng nhập</a>
+        <a href="../loginregister/register.html" id="registerBtn">Đăng ký</a>
+        
+        <span id="userInfo" style="display:none; font-weight:bold; color:white;">
+            👤 Xin chào, <span id="nameDisplay"></span>!
+        </span>
+
+        <a href="#" id="logoutBtn" style="display:none; margin-left:10px; color:yellow; font-weight:bold;">
+            Đăng xuất
+        </a>
+    </nav>
+</header>
+
+<div class="search-bar">
+    <input type="text" placeholder="Tìm kiếm sách, tác giả, thể loại...">
+    <button><i class="fas fa-search"></i> Tìm kiếm</button>
+    <button id="menu-btn" class="menu-btn"><i class="fas fa-bars"></i> Danh mục</button>
+</div>
+
+<section class="book-section">
+    <h2 id="category-title">Danh mục</h2>
+    <div id="category-grid" class="book-grid"></div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <h3>BOOKSTORE</h3>
+            <p>Website bán sách hiện đại – nhanh – tiện lợi.</p>
+        </div>
+
+        <div>
+            <h4>Liên hệ</h4>
+            <p>Email: support@bookstore.vn</p>
+            <p>Hotline: 0123 456 789</p>
+        </div>
+
+        <div>
+            <h4>Follow chúng tôi</h4>
+            <p>Facebook</p>
+            <p>Zalo</p>
+            <p>TikTok</p>
+        </div>
+    </div>
+
+    <p class="copyright">© 2025 BookStore. All rights reserved.</p>
+</footer>
+
+<script src="category.js"></script>
+
+<script>
+    // Hàm cập nhật số lượng Giỏ hàng (copy từ Trangchu.js)
+    function getCart() {
+        return JSON.parse(localStorage.getItem("cart")) || [];
+    }
+    
+    function updateCartCount() {
+        const cart = getCart();
+        const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0); 
+        const cartLink = document.getElementById("cartLink");
+
+        if (cartLink) {
+            cartLink.textContent = `Giỏ hàng (${totalCount})`;
+        }
+    }
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // ... (Logic menu giữ nguyên)
+
+        const menuBtn = document.getElementById("menu-btn");
+        const megaMenu = document.getElementById("mega-menu");
+        const overlay = document.getElementById("menu-overlay");
+
+        menuBtn.onclick = () => {
+            megaMenu.classList.add("active");
+            overlay.style.display = "block";
+        };
+
+        overlay.addEventListener("click", () => {
+            megaMenu.classList.remove("active");
+            overlay.style.display = "none";
+        });
+
+        document.getElementById("close-menu-btn").onclick = () => {
+            megaMenu.classList.remove("active");
+            overlay.style.display = "none";
+        };
+
+        megaMenu.querySelectorAll("a").forEach(link => {
+            link.onclick = () => {
+                 megaMenu.classList.remove("active");
+                 overlay.style.display = "none";
+            };
+        });
+        
+        // 🚀 Gọi hàm cập nhật số lượng khi trang load
+        updateCartCount(); 
+        
+        // Logic Login/Logout (giữ nguyên)
+        const token = localStorage.getItem("token");
+        const username = localStorage.getItem("username");
+
+        const loginBtn = document.getElementById("loginBtn");
+        const registerBtn = document.getElementById("registerBtn");
+
+        const userInfo = document.getElementById("userInfo");
+        const nameDisplay = document.getElementById("nameDisplay");
+        const logoutBtn = document.getElementById("logoutBtn");
+
+        if (token && username) {
+            loginBtn.style.display = "none";
+            registerBtn.style.display = "none";
+            userInfo.style.display = "inline-block";
+            nameDisplay.textContent = username;
+            logoutBtn.style.display = "inline-block";
+        }
+
+        logoutBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            localStorage.removeItem("token");
+            localStorage.removeItem("username");
+            window.location.reload();
+        });
+    });
+</script>
+
+</body>
+</html>

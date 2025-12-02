@@ -1,0 +1,141 @@
+/* ========================================= */
+/* BASE STYLE CHO TRANG CHI TIẾT (DETAIL PAGE) */
+/* ========================================= */
+.detail-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap; 
+}
+
+/* KHỐI BÊN TRÁI: ẢNH */
+.detail-left {
+  flex: 1 1 350px; /* Cố định kích thước ảnh lớn hơn */
+  display: block; 
+  text-align: center;
+  padding-top: 20px;
+}
+
+.detail-left img {
+  width: 100%;
+  max-width: 350px; /* Giữ ảnh cố định kích thước */
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  margin-bottom: 0; /* Đã loại bỏ khoảng cách nút cũ */
+}
+
+
+/* KHỐI BÊN PHẢI: THÔNG TIN */
+.detail-right {
+  flex: 2 1 600px; /* Cho khối thông tin chiếm nhiều không gian hơn */
+  padding: 10px 0;
+}
+
+.detail-right p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.detail-right strong {
+    color: #333;
+}
+
+/* KHỐI MỚI: Định vị Tên sách và Nút (Dùng Flexbox) */
+.product-header {
+    display: flex;
+    justify-content: space-between; /* Đẩy tên sách và nút ra hai đầu */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee; /* Đường kẻ phân cách */
+    padding-bottom: 15px;
+}
+
+.product-header h2 {
+    margin: 0;
+    font-size: 32px;
+    color: #c62828; /* Màu đỏ nổi bật cho tên sách */
+    line-height: 1.2;
+    flex-grow: 1; /* Cho phép H2 mở rộng */
+    margin-right: 20px; /* Khoảng cách giữa tên sách và nút */
+}
+
+/* Style cho nút "Thêm vào giỏ hàng" */
+#add-to-cart {
+    padding: 12px 25px; 
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px; 
+    font-weight: bold;
+    transition: background 0.3s ease;
+    flex-shrink: 0; /* Đảm bảo nút không bị co lại */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+#add-to-cart:hover {
+    background: #e65c00;
+}
+
+
+/* Thông tin chi tiết cuộn */
+.detail-right h3 {
+    margin-top: 25px;
+    color: #0a4fff;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 5px;
+}
+
+.detail-scroll {
+    max-height: 250px; /* Giới hạn chiều cao */
+    overflow-y: auto; /* Tạo thanh cuộn */
+    padding-right: 15px; /* Để tránh chữ dính vào thanh cuộn */
+}
+
+.detail-scroll p {
+    white-space: pre-wrap; /* Giữ định dạng xuống dòng nếu có */
+}
+
+
+/* Responsive cho Mobile/Tablet */
+@media (max-width: 900px) {
+    .detail-container {
+        flex-direction: column;
+    }
+
+    .detail-left {
+        order: 1; /* Ảnh lên trên cùng */
+        flex: 1 1 100%;
+    }
+
+    .detail-right {
+        order: 2; /* Thông tin xuống dưới */
+        flex: 1 1 100%;
+        padding-top: 0;
+    }
+    
+    .product-header {
+        flex-direction: column; /* Xếp tên sách và nút theo chiều dọc */
+        align-items: flex-start; /* Căn lề trái */
+    }
+
+    .product-header h2 {
+        margin-right: 0;
+        font-size: 28px;
+        margin-bottom: 15px; /* Thêm khoảng cách giữa H2 và nút */
+    }
+    
+    #add-to-cart {
+        width: 100%; /* Nút chiếm hết chiều rộng trên mobile */
+    }
+}

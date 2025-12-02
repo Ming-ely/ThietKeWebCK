@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\H\u1ECDc t\u1EADp\\Thi\u1EBFt K\u1EBF web\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\H\u1ECDc t\u1EADp\\Thi\u1EBFt K\u1EBF web\\Trangchu.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Trangchu.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\H\u1ECDc t\u1EADp\\Thi\u1EBFt K\u1EBF web\\Trangchu.html||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Trangchu.html||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\H\u1ECDc t\u1EADp\\Thi\u1EBFt K\u1EBF web\\Trangchu.css||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Trangchu.css||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\H\u1ECDc t\u1EADp\\Thi\u1EBFt K\u1EBF web\\NewFile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:NewFile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Trangchu.html",
+              "DocumentMoniker": "D:\\H\u1ECDc t\u1EADp\\Thi\u1EBFt K\u1EBF web\\Trangchu.html",
+              "RelativeDocumentMoniker": "Trangchu.html",
+              "ToolTip": "D:\\H\u1ECDc t\u1EADp\\Thi\u1EBFt K\u1EBF web\\Trangchu.html",
+              "RelativeToolTip": "Trangchu.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-17T07:18:05.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NewFile",
+              "DocumentMoniker": "D:\\H\u1ECDc t\u1EADp\\Thi\u1EBFt K\u1EBF web\\NewFile",
+              "RelativeDocumentMoniker": "NewFile",
+              "ToolTip": "D:\\H\u1ECDc t\u1EADp\\Thi\u1EBFt K\u1EBF web\\NewFile",
+              "RelativeToolTip": "NewFile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-17T07:14:21.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Trangchu.css",
+              "DocumentMoniker": "D:\\H\u1ECDc t\u1EADp\\Thi\u1EBFt K\u1EBF web\\Trangchu.css",
+              "RelativeDocumentMoniker": "Trangchu.css",
+              "ToolTip": "D:\\H\u1ECDc t\u1EADp\\Thi\u1EBFt K\u1EBF web\\Trangchu.css",
+              "RelativeToolTip": "Trangchu.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-17T07:14:03.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Trangchu.html",
+              "DocumentMoniker": "D:\\H\u1ECDc t\u1EADp\\Thi\u1EBFt K\u1EBF web\\Trangchu.html",
+              "RelativeDocumentMoniker": "Trangchu.html",
+              "ToolTip": "D:\\H\u1ECDc t\u1EADp\\Thi\u1EBFt K\u1EBF web\\Trangchu.html",
+              "RelativeToolTip": "Trangchu.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-17T07:13:37.683Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

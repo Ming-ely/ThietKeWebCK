@@ -9,7 +9,8 @@
 <body>
 
     <header>
-        <h1>BookStore</h1>
+        <h1 style="color:white; text-shadow: 2px 2px #004;">BookStore – Giáng Sinh 2025</h1>
+
         <nav>
             <a href="Trangchu.html">Trang chủ</a>
            
@@ -160,6 +161,25 @@
             });
         });
     </script>
+    <!-- Hiệu ứng tuyết rơi -->
+<div class="snow"></div>
+<script>
+    function createSnow() {
+        const snow = document.createElement("div");
+        snow.className = "snowflake";
+        snow.style.left = Math.random() * window.innerWidth + "px";
+        snow.style.animationDuration = 2 + Math.random() * 3 + "s";
+        snow.style.opacity = Math.random();
+        snow.style.fontSize = Math.random() * 10 + 10 + "px";
+        snow.innerHTML = "❄";
+        document.body.appendChild(snow);
+
+        setTimeout(() => snow.remove(), 5000);
+    }
+
+    setInterval(createSnow, 150);
+</script>
+
 
 </body>
 </html>

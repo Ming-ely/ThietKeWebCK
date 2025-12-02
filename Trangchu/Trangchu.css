@@ -544,6 +544,106 @@ copyright {
     border-radius: 50%;
     margin-right: 8px;
 }
+.add-to-cart-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background: linear-gradient(135deg, #ff6600, #ff8c1a);
+    color: white;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: 0.25s ease;
+}
+
+.add-to-cart-btn:hover {
+    background: linear-gradient(135deg, #ff751a, #ffa64d);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(255, 102, 0, 0.45);
+}
+
+.add-to-cart-btn:active {
+    transform: scale(0.94);
+}
+
+.icon-cart {
+    font-size: 18px;
+}
+/* 🎄 NỀN HEADER GIÁNG SINH */
+header {
+    background: linear-gradient(135deg, #b30000, #ff4d4d);
+    border-bottom: 4px solid #fff;
+}
+
+/* 🎁 Chữ trắng đậm hơn */
+header nav a {
+    color: #fff !important;
+    font-weight: 700;
+}
+
+/* ❄️ NÚT TÌM KIẾM GIÁNG SINH */
+.search-bar button {
+    background: #d40000;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(212, 0, 0, 0.3);
+}
+
+.search-bar button:hover {
+    background: #ff3333;
+}
+
+/* 🎁 NÚT MENU 3 GẠCH GIÁNG SINH */
+.menu-btn {
+    background: #fff;
+    color: #b30000;
+    border-radius: 10px;
+    font-size: 26px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.menu-btn:hover {
+    background: #ffe6e6;
+}
+
+/* 🎄 BOOK CARD VIỀN GIÁNG SINH */
+.book-card {
+    border: 2px solid #ffdddd;
+}
+
+/* 🔔 NÚT THÊM GIỎ HÀNG NOEL */
+.add-to-cart-btn {
+    background: linear-gradient(135deg, #0b7a00, #11aa00);
+    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.4);
+}
+
+.add-to-cart-btn:hover {
+    background: linear-gradient(135deg, #0fa700, #16cc00);
+}
+
+/* ❄️ TUYẾT RƠI */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: #ffffff;
+    pointer-events: none;
+    user-select: none;
+    z-index: 999999;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
 
 
 

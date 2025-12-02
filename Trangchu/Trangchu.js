@@ -82,23 +82,27 @@ function renderBooks(sectionId, books) {
 
             <p class="author">${book.author}</p>
             <h3 class="title">${book.title}</h3>
-            
+
             <div class="book-rating">
                 ${'⭐'.repeat(book.rating)} (${book.sold} đã bán)
             </div>
-            
+
             <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCartFromHome({
-                id: ${book.id}, 
-                title: '${book.title.replace(/'/g, "\\'")}', 
-                price: ${book.price}, 
+                id: ${book.id},
+                title: '${book.title.replace(/'/g, "\\'")}',
+                price: ${book.price},
                 image: '${book.image}'
-            })">Thêm vào giỏ</button>
+            })">
+                <span class="icon-cart">🛒</span> Thêm vào giỏ
+            </button>
 
         </div>
         `;
+        
         grid.innerHTML += card;
     });
 }
+
 
 // Chuyển đến trang chi tiết
 function openDetail(id) {

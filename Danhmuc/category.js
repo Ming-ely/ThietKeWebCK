@@ -16,18 +16,15 @@ const CATEGORY_NAMES = {
     "thieu-nhi": "🧒 Sách Thiếu Nhi",
 };
 
-// Gắn tiêu đề lên trang
 document.getElementById("category-title").textContent =
     CATEGORY_NAMES[type] || "Danh mục sách";
 
 // =====================
-// LOAD DỮ LIỆU TỪ book.json
+// LOAD book.json
 // =====================
-fetch("book.json")
+fetch("../Trangchu/book.json")
     .then(res => res.json())
     .then(data => {
-
-        // 👉 LỌC THEO CATEGORY (cột category trong book.json)
         const filtered = data.filter(book => book.category === type);
 
         if (filtered.length === 0) {
@@ -36,14 +33,12 @@ fetch("book.json")
             return;
         }
 
-        // Hiển thị danh sách
         renderGrid(filtered);
     })
-    .catch(err => console.error("Lỗi khi load dữ liệu:", err));
-
+    .catch(err => console.error("Lỗi:", err));
 
 // =====================
-// HIỂN THỊ SÁCH DẠNG GRID
+// HIỂN THỊ GRID
 // =====================
 function renderGrid(list) {
     const grid = document.getElementById("category-grid");
@@ -59,7 +54,7 @@ function renderGrid(list) {
                 ).join("") : ""}
             </div>
 
-            <img src="${book.image}" class="book-img">
+            <img src="../Trangchu/${book.image}" class="book-img" alt="${book.title}">
 
             <div class="book-price">
                 <span class="new-price">${book.price.toLocaleString()}đ</span>
@@ -74,28 +69,9 @@ function renderGrid(list) {
     });
 }
 
-
 // =====================
-// CHUYỂN ĐẾN TRANG CHI TIẾT
+// CHI TIẾT SÁCH
 // =====================
 function openDetail(id) {
     window.location.href = `../Chitiet/detail.html?id=${id}`;
 }
-
-
-// =====================
-// MENU 3 GẠCH
-// =====================
-const menuBtn = document.getElementById("menu-btn");
-const sideMenu = document.getElementById("side-menu");
-
-menuBtn.addEventListener("click", () => {
-    sideMenu.classList.toggle("active");
-});
-
-// Đóng menu khi click ra ngoài
-document.addEventListener("click", (e) => {
-    if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-        sideMenu.classList.remove("active");
-    }
-});

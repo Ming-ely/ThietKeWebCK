@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookStore - Trang bán sách</title>
     <link rel="stylesheet" href="Trangchu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -20,9 +21,8 @@
             <a href="../loginregister/register.html" id="registerBtn">Đăng ký</a>
 
             <span id="userInfo" style="display:none; font-weight:bold; color:white;">
-                👤 Xin chào, <span id="nameDisplay"></span>!
-            </span>
-
+    <i class="fa-regular fa-face-smile"></i> Xin chào, <span id="nameDisplay"></span>!
+</span>
             <a href="#" id="logoutBtn" style="display:none; margin-left:10px; color:yellow; font-weight:bold;">
                 Đăng xuất
             </a>
@@ -40,7 +40,7 @@
         <div class="mega-content">
             <div class="mega-col">
                 <h3>📘 Sách Kinh Tế</h3>
-                <a href="../Danhmuc/category.html?type=kinh-te">Nhân vật - Bài học kinh doanh</a>
+                <a href="../danhmuc/category.html?type=kinh-te">Nhân vật - Bài học kinh doanh</a>
                 <a href="../Danhmuc/category.html?type=kinh-te">Quản trị - Lãnh đạo</a>
                 <a href="../Danhmuc/category.html?type=kinh-te">Marketing - Bán hàng</a>
                 <a href="../Danhmuc/category.html?type=kinh-te">Phân tích kinh tế</a>
@@ -75,10 +75,10 @@
             <div class="banner-container">
                 <img src="images/banner1.webp" class="banner active" alt="Banner 1">
                 <img src="images/banner2.webp" class="banner" alt="Banner 2">
-                <img src="images/banner3.webp" class="banner" alt="Banner 3">
+                <img src="images/Banner3.jpg" class="banner" alt="Banner 3">
             </div>
-            <button class="banner-btn prev" onclick="moveBanner(-1)">❮</button>
-            <button class="banner-btn next" onclick="moveBanner(1)">❯</button>
+            <button class="banner-btn left" onclick="moveBanner(-1)">❮</button>
+            <button class="banner-btn right" onclick="moveBanner(1)">❯</button>
         </section>
 
         <section class="book-section flash-sale">

@@ -644,6 +644,20 @@ header nav a {
         opacity: 0;
     }
 }
+/* Khoảng cách giữa các nút trong header */
+nav a {
+    margin-left: 20px;
+}
+
+/* Khoảng cách riêng cho phần "Xin chào" */
+#userInfo {
+    margin-left: 25px;
+}
+
+/* Khoảng cách cho nút Đăng xuất */
+#logoutBtn {
+    margin-left: 15px;
+}
 
 
 

@@ -658,6 +658,54 @@ nav a {
 #logoutBtn {
     margin-left: 15px;
 }
+.search-bar {
+    position: relative;
+}
 
+/* Giúp suggest box bám đúng theo input */
+#searchInput {
+    position: relative;
+    z-index: 2;
+}
+
+/* Box gợi ý nằm ngay dưới thanh tìm kiếm, rộng đúng bằng input */
+.suggest-box {
+    position: fixed;
+    top: calc(110px + 60px);        /* vị trí tạm, JS sẽ điều chỉnh lại */
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 99999;
+}
+
+
+/* Style item gợi ý (giữ nguyên nếu bạn đã có thì cái này chỉ bổ sung) */
+.suggest-item {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.suggest-item img {
+    width: 40px;
+    height: 55px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.suggest-item:hover {
+    background: #f3f3f3;
+}
+
+.suggest-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
 
 

@@ -156,3 +156,96 @@ document.addEventListener("DOMContentLoaded", () => {
         overlay.style.display = "none";
     };
 });
+// =========================
+// SEARCH FUNCTION
+// =========================
+let allBooks = [];
+const searchInput = document.getElementById("searchInput");
+const suggestBox = document.getElementById("suggestBox");
+
+// Load data for search
+fetch("book.json")
+    .then(res => res.json())
+    .then(data => allBooks = data);
+
+// Khi nhập chữ
+searchInput.addEventListener("keyup", function () {
+    let keyword = searchInput.value.toLowerCase().trim();
+
+    if (keyword === "") {
+        suggestBox.style.display = "none";
+        return;
+    }
+
+    let result = allBooks.filter(book =>
+        book.title.toLowerCase().includes(keyword) ||
+        book.author.toLowerCase().includes(keyword)
+    );
+
+    showSuggest(result);
+});
+
+function showSuggest(list) {
+
+    if (list.length === 0) {
+        suggestBox.style.display = "none";
+        return;
+    }
+
+    let html = "";
+
+    list.forEach(book => {
+        html += `
+        <div class="suggest-item" onclick="openDetail(${book.id})">
+            <img src="${book.image}">
+            <div class="suggest-info">
+                <b>${book.title}</b>
+                <span>${book.author}</span>
+            </div>
+        </div>
+        `;
+    });
+
+    suggestBox.innerHTML = html;
+    suggestBox.style.display = "block";
+}
+
+// Ẩn gợi ý khi click ra ngoài
+document.addEventListener("click", function (e) {
+    if (!e.target.closest(".search-bar")) {
+        suggestBox.style.display = "none";
+    }
+});
+
+// Nút tìm kiếm (enter)
+document.getElementById("searchBtn").addEventListener("click", function () {
+    let keyword = searchInput.value.toLowerCase().trim();
+    let result = allBooks.find(book =>
+        book.title.toLowerCase() === keyword
+    );
+
+    if (result) openDetail(result.id);
+});
+// Căn lại vị trí box gợi ý theo đúng vị trí ô input
+function updateSuggestBoxPosition() {
+    const input = document.getElementById("searchInput");
+    const box = document.getElementById("suggestBox");
+
+    if (!input || !box) return;
+
+    // Lấy vị trí của input
+    const rect = input.getBoundingClientRect();
+
+    // Cập nhật vị trí tuyệt đối
+    box.style.left = rect.left + "px";
+    box.style.width = rect.width + "px"; // rộng đúng bằng input
+}
+
+// Cập nhật mỗi khi nhập chữ
+searchInput.addEventListener("input", updateSuggestBoxPosition);
+
+// Cập nhật khi resize màn hình
+window.addEventListener("resize", updateSuggestBoxPosition);
+
+// Cập nhật khi load trang
+window.addEventListener("DOMContentLoaded", updateSuggestBoxPosition);

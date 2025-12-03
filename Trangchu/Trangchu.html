@@ -32,10 +32,13 @@
     </header>
 
     <div class="search-bar">
-        <input type="text" placeholder="Tìm kiếm sách, tác giả, thể loại...">
-        <button>Tìm kiếm</button>
-        <button id="menu-btn" class="menu-btn">☰</button>
-    </div>
+    <input id="searchInput" type="text" placeholder="Tìm kiếm sách, tác giả..." autocomplete="off">
+    <div id="suggestBox" class="suggest-box"></div>
+
+    <button id="searchBtn">Tìm kiếm</button>
+    <button id="menu-btn" class="menu-btn">☰</button>
+</div>
+
 
     <div id="mega-menu" class="mega-menu">
         <h2>📚 Danh mục sách</h2>

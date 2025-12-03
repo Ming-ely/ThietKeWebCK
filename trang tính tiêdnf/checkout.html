@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thanh toán — Checkout</title>
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <header>
+    <h1>Giỏ hàng</h1>
+    <nav>
+        <a href="../Trangchu/Trangchu.html">Trang chủ</a>
+        <a href="../giohang/giohang.html">giohang</a>
+    </nav>
+</header>
+
+  <div class="wrap">
+    <header>
+      <a href="#" onclick="history.back();return false">← Quay lại</a>
+      <h1>Thanh toán đơn hàng</h1>
+    </header>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <div class="section-title">
+            <h2>Giỏ hàng</h2>
+            <div class="muted">Có <span id="item-count">2</span> sản phẩm</div>
+          </div>
+
+          <div id="cart-list"></div>
+
+          <hr class="divider">
+
+          <div>
+            <h3>Thông tin nhận hàng</h3>
+            <div class="form-grid">
+              <div>
+                <label>Họ và tên</label>
+                <input id="fullname" type="text" placeholder="Nguyễn Văn A" />
+              </div>
+              <div>
+                <label>Số điện thoại</label>
+                <input id="phone" type="text" placeholder="0944 xxxx" />
+              </div>
+              <div class="full">
+                <label>Địa chỉ</label>
+                <input id="address" type="text" placeholder="Số nhà, tên đường, phường/xã" />
+              </div>
+              <div>
+                <label>Tỉnh/Thành</label>
+                <select id="province"></select>
+              </div>
+              <div>
+                <label>Quận/Huyện</label>
+                <input id="district" type="text" placeholder="Quận 1" />
+              </div>
+              <div class="full">
+                <label>Ghi chú</label>
+                <textarea id="note" rows="2"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Phương thức thanh toán</h3>
+          <div class="pay-options">
+            <label><input type="radio" name="pay" value="card" checked /> Thẻ/Online</label>
+            <label><input type="radio" name="pay" value="cod" /> COD</label>
+            <label><input type="radio" name="pay" value="bank" /> Chuyển khoản (QR)</label>
+          </div>
+          <div class="note">Nếu chọn chuyển khoản, vui lòng thanh toán trong 30 phút.</div>
+        </div>
+      </div>
+
+      <aside class="summary card">
+        <h3>Đơn hàng</h3>
+        <div id="summary-items"></div>
+        <div class="row"><span class="muted">Tạm tính</span><span id="subtotal">₫0</span></div>
+        <div class="row"><span class="muted">Phí vận chuyển</span><span id="shipping">₫0</span></div>
+        <div class="row"><span class="muted">Giảm giá</span><span id="discount">-₫0</span></div>
+        <hr class="divider">
+        <div class="row total"><span>Tổng cộng</span><span id="grand">₫0</span></div>
+
+        <div class="voucher">
+          <label>Mã giảm giá</label>
+          <div class="voucher-box">
+            <input id="voucher" type="text" placeholder="NHAPMA10" />
+            <button id="apply-voucher">Áp dụng</button>
+          </div>
+          <div id="voucher-msg" class="note"></div>
+        </div>
+
+        <label>Dịch vụ giao hàng</label>
+        <select id="shipping-service" class="ship-select">
+          <option value="standard">Tiêu chuẩn (2-4 ngày)</option>
+          <option value="express">Nhanh (1-2 ngày) +₫30.000</option>
+        </select>
+
+        <div class="controls">
+          <button class="btn btn-primary" id="pay-btn">Xác nhận & Thanh toán</button>
+          <button class="btn btn-ghost" id="save-btn">Lưu nháp</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="qr-modal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>Thanh toán bằng QR</h3>
+        <button onclick="closeQR()">✕</button>
+      </div>
+      <div class="modal-body">
+        <img class="qr" src="qr.png" alt="QR" />
+        <div class="qr-info">
+          <div>Ngân hàng: Ví dụ</div>
+          <div class="bold">STK: 0123 456 789</div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-primary" onclick="closeQR()">Đã chuyển tiền</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

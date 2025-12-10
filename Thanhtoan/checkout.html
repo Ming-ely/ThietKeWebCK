@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán - BookStore</title>
+
+    <link rel="stylesheet" href="../Trangchu/Trangchu.css">
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+    <h1>BookStore</h1>
+    <nav>
+        <a href="../Trangchu/Trangchu.html">Trang chủ</a>
+        <a href="../Giohang/cart.html" id="cartLink">Giỏ hàng</a>
+        <a href="../loginregister/login.html" id="loginBtn">Đăng nhập</a>
+        <a href="../loginregister/register.html" id="registerBtn">Đăng ký</a>
+
+        <span id="userInfo" style="display:none; font-weight:bold; color:white;">
+            👤 Xin chào, <span id="nameDisplay"></span>!
+        </span>
+        <a href="#" id="logoutBtn" style="display:none; margin-left:10px; color:yellow; font-weight:bold;">
+            Đăng xuất
+        </a>
+    </nav>
+</header>
+
+<div class="checkout-container">
+    <h2>🧾 Thanh Toán</h2>
+
+    <div class="checkout-content">
+
+        <div id="checkout-items" class="checkout-items"></div>
+
+        <div class="checkout-summary">
+            <h3>Tóm Tắt Đơn Hàng</h3>
+            <div class="summary-row">
+                <span>Tổng tiền:</span>
+                <span id="total-amount">0đ</span>
+            </div>
+
+            <button id="deliver-btn" class="deliver-btn">GIAO HÀNG</button>
+        </div>
+
+    </div>
+
+    <div id="empty-message" class="empty-message" style="display:none;">
+        <p>Giỏ hàng của bạn đang trống 😢</p>
+        <a href="../Trangchu/Trangchu.html">Quay lại mua sắm</a>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <h3>BOOKSTORE</h3>
+            <p>Website bán sách hiện đại – nhanh – tiện lợi.</p>
+        </div>
+        <div>
+            <h4>Liên hệ</h4>
+            <p>Email: support@bookstore.vn</p>
+            <p>Hotline: 0123 456 789</p>
+        </div>
+        <div>
+            <h4>Follow chúng tôi</h4>
+            <p>Facebook</p>
+            <p>Zalo</p>
+            <p>TikTok</p>
+        </div>
+    </div>
+    <p class="copyright">© 2025 BookStore. All rights reserved.</p>
+</footer>
+
+<script src="checkout.js"></script>
+
+</body>
+</html>

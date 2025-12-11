@@ -19,8 +19,14 @@
     gap: 25px;
 }
 
-.checkout-items {
+.checkout-main {
     flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.checkout-items {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -41,19 +47,123 @@
     border-radius: 6px;
 }
 
+/* Các section checkout */
+.checkout-section {
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.checkout-section h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.address-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.address-input:focus {
+    outline: none;
+    border-color: #0a4fff;
+    box-shadow: 0 0 5px rgba(10, 79, 255, 0.3);
+}
+
+/* Voucher */
+.voucher-group {
+    display: flex;
+    gap: 10px;
+}
+
+.voucher-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.voucher-input:focus {
+    outline: none;
+    border-color: #0a4fff;
+    box-shadow: 0 0 5px rgba(10, 79, 255, 0.3);
+}
+
+.voucher-btn {
+    padding: 12px 20px;
+    background: #0a4fff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.voucher-btn:hover {
+    background: #0839cc;
+}
+
+/* Phương thức thanh toán */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.payment-option:hover {
+    background: #f0f0f0;
+    border-color: #0a4fff;
+}
+
+.payment-option input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.payment-option span {
+    font-size: 15px;
+    color: #333;
+}
+
+/* Tóm tắt */
 .checkout-summary {
     flex: 1;
     background: #f8f8f8;
     padding: 20px;
     border-radius: 8px;
     border: 1px solid #ddd;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
 }
 
 .summary-row {
-    font-size: 18px;
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .deliver-btn {
@@ -66,6 +176,8 @@
     font-size: 18px;
     cursor: pointer;
     font-weight: bold;
+    margin-top: 15px;
+    transition: background 0.3s;
 }
 
 .deliver-btn:hover {

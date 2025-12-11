@@ -34,13 +34,53 @@
 
     <div class="checkout-content">
 
-        <div id="checkout-items" class="checkout-items"></div>
+        <div class="checkout-main">
+            <div id="checkout-items" class="checkout-items"></div>
+
+            <!-- Địa chỉ giao hàng -->
+            <div class="checkout-section">
+                <h3>📍 Địa Chỉ Giao Hàng</h3>
+                <input type="text" id="address-input" class="address-input" placeholder="Nhập địa chỉ giao hàng của bạn...">
+            </div>
+
+            <!-- Voucher -->
+            <div class="checkout-section">
+                <h3>🎁 Mã Voucher</h3>
+                <div class="voucher-group">
+                    <input type="text" id="voucher-input" class="voucher-input" placeholder="Nhập mã voucher (nếu có)">
+                    <button id="voucher-btn" class="voucher-btn">Áp Dụng</button>
+                </div>
+            </div>
+
+            <!-- Phương thức thanh toán -->
+            <div class="checkout-section">
+                <h3>💳 Phương Thức Thanh Toán</h3>
+                <div class="payment-methods">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="card" checked>
+                        <span>💳 Thanh toán bằng thẻ</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="cash">
+                        <span>💵 Thanh toán bằng tiền mặt</span>
+                    </label>
+                </div>
+            </div>
+        </div>
 
         <div class="checkout-summary">
             <h3>Tóm Tắt Đơn Hàng</h3>
             <div class="summary-row">
-                <span>Tổng tiền:</span>
-                <span id="total-amount">0đ</span>
+                <span>Tổng tiền hàng:</span>
+                <span id="subtotal-amount">0đ</span>
+            </div>
+            <div class="summary-row">
+                <span>Voucher giảm:</span>
+                <span id="voucher-discount">0đ</span>
+            </div>
+            <div class="summary-row" style="border-top: 1px solid #ddd; padding-top: 10px; margin-top: 10px;">
+                <span style="font-weight: bold; font-size: 18px;">Tổng tiền:</span>
+                <span id="total-amount" style="font-weight: bold; font-size: 18px; color: #c62828;">0đ</span>
             </div>
 
             <button id="deliver-btn" class="deliver-btn">GIAO HÀNG</button>

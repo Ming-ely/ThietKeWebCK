@@ -16,8 +16,15 @@
      
       <a href="../Giohang/cart.html" id="cartLink">Giỏ hàng</a>
 
-      <a href="../loginregister/login.html">Đăng nhập</a>
-      <a href="../loginregister/register.html">Đăng ký</a>
+      <!-- Hiển thị nếu chưa đăng nhập -->
+      <a href="../loginregister/login.html" id="loginLink">Đăng nhập</a>
+      <a href="../loginregister/register.html" id="registerLink">Đăng ký</a>
+
+      <!-- Hiển thị nếu đã đăng nhập -->
+      <span id="userInfo" style="display: none;">
+        <span id="username"></span>
+        <a href="#" id="logoutBtn">Đăng xuất</a>
+      </span>
     </nav>
   </header>
 

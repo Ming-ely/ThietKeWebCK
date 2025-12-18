@@ -1,6 +1,42 @@
 // detail.js
 
 // =====================
+// HÀM KIỂM TRA TRẠNG THÁI ĐĂNG NHẬP
+// =====================
+
+function checkLoginStatus() {
+    const token = localStorage.getItem("token");
+    const username = localStorage.getItem("username");
+    const loginLink = document.getElementById("loginLink");
+    const registerLink = document.getElementById("registerLink");
+    const userInfo = document.getElementById("userInfo");
+    const usernameSpan = document.getElementById("username");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (token && username) {
+        // Đã đăng nhập
+        loginLink.style.display = "none";
+        registerLink.style.display = "none";
+        userInfo.style.display = "inline";
+        usernameSpan.textContent = `👤 ${username}`;
+
+        // Xử lý nút đăng xuất
+        logoutBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            localStorage.removeItem("token");
+            localStorage.removeItem("username");
+            alert("Đã đăng xuất thành công!");
+            window.location.reload();
+        });
+    } else {
+        // Chưa đăng nhập
+        loginLink.style.display = "inline";
+        registerLink.style.display = "inline";
+        userInfo.style.display = "none";
+    }
+}
+
+// =====================
 // HÀM QUẢN LÝ GIỎ HÀNG CHUNG
 // =====================
 
@@ -50,6 +86,9 @@ function addToCart(book) {
     // window.location.href = "../Giohang/cart.html";
 }
 
+
+// Kiểm tra trạng thái đăng nhập khi trang tải
+checkLoginStatus();
 
 // =====================
 // LOAD DỮ LIỆU VÀ GÁN SỰ KIỆN

@@ -85,10 +85,24 @@
 </header>
 
 <div class="search-bar">
-    <input type="text" placeholder="Tìm kiếm sách, tác giả, thể loại...">
-    <button><i class="fas fa-search"></i> Tìm kiếm</button>
-    <button id="menu-btn" class="menu-btn"><i class="fas fa-bars"></i> Danh mục</button>
+    <input 
+        type="text"
+        id="searchInput"
+        placeholder="Tìm kiếm sách, tác giả, thể loại..."
+    >
+
+    <button id="searchBtn">
+        <i class="fas fa-search"></i> Tìm kiếm
+    </button>
+
+    <button id="menu-btn" class="menu-btn">
+        <i class="fas fa-bars"></i> Danh mục
+    </button>
+
+    <!-- BOX GỢI Ý (BẮT BUỘC PHẢI CÓ) -->
+    <div id="suggestBox" class="suggest-box"></div>
 </div>
+
 
 <section class="book-section">
     <h2 id="category-title">Danh mục</h2>
@@ -120,6 +134,7 @@
 </footer>
 
 <script src="category.js"></script>
+  
 
 <script>
     // Hàm cập nhật số lượng Giỏ hàng (copy từ Trangchu.js)
@@ -200,6 +215,7 @@
 <script>
 
 </script>
+
 
 
 </body>

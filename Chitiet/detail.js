@@ -29,11 +29,16 @@ function addToCart(book) {
 
     if (existingItemIndex > -1) {
         cart[existingItemIndex].quantity += 1;
+        // Backward-compatible: bổ sung author nếu trước đó cart chưa lưu
+        if (!cart[existingItemIndex].author && book.author) {
+            cart[existingItemIndex].author = book.author;
+        }
     } else {
         // Lấy các trường cần thiết để lưu vào giỏ hàng
         cart.push({
             id: book.id,
             title: book.title,
+            author: book.author || "",
             price: book.price,
             image: book.image,
             quantity: 1

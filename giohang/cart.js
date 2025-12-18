@@ -58,9 +58,9 @@ function createCartItemHTML(item) {
     // Nếu ảnh nằm trong thư mục Trangchu/images/, đường dẫn phải là ../Trangchu/images/
     return `
         <div class="cart-item" data-id="${item.id}">
-            <img src="../Trangchu/${item.image}" class="item-image" alt="${item.title}">
+            <img src="../Trangchu/${item.image}" class="item-image item-image-link" alt="${item.title}">
             
-            <div class="item-details">
+            <div class="item-info">
                 <h4 class="item-title">${item.title}</h4>
                 <p class="item-price">Giá: ${formatCurrency(item.price)}</p>
             </div>

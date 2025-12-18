@@ -75,3 +75,89 @@ function renderGrid(list) {
 function openDetail(id) {
     window.location.href = `../Chitiet/detail.html?id=${id}`;
 }
+// =========================
+// SEARCH – FIX CUỐI CÙNG (HEADER LOAD ĐỘNG)
+// =========================
+(function initCategorySearch() {
+
+    let initialized = false;
+
+    const observer = new MutationObserver(() => {
+        if (initialized) return;
+
+        const searchInput = document.getElementById("searchInput");
+        const suggestBox = document.getElementById("suggestBox");
+        const searchBtn = document.getElementById("searchBtn");
+
+        if (!searchInput || !suggestBox) return;
+
+        initialized = true;
+        observer.disconnect();
+
+        console.log("✅ Search initialized (category)");
+
+        let allBooks = [];
+
+        fetch("../Trangchu/book.json")
+            .then(res => res.json())
+            .then(data => allBooks = data)
+            .catch(err => console.error("Lỗi load book.json:", err));
+
+        searchInput.addEventListener("input", () => {
+            const keyword = searchInput.value.toLowerCase().trim();
+
+            if (!keyword) {
+                suggestBox.style.display = "none";
+                return;
+            }
+
+            const results = allBooks.filter(book =>
+                book.title.toLowerCase().includes(keyword) ||
+                book.author.toLowerCase().includes(keyword)
+            );
+
+            renderSuggest(results);
+        });
+
+        function renderSuggest(list) {
+            if (list.length === 0) {
+                suggestBox.style.display = "none";
+                return;
+            }
+
+            suggestBox.innerHTML = list.map(book => `
+                <div class="suggest-item" onclick="openDetail(${book.id})">
+                    <img src="../Trangchu/${book.image}">
+                    <div class="suggest-info">
+                        <b>${book.title}</b>
+                        <span>${book.author}</span>
+                    </div>
+                </div>
+            `).join("");
+
+            suggestBox.style.display = "block";
+        }
+
+        document.addEventListener("click", e => {
+            if (!e.target.closest(".search-bar")) {
+                suggestBox.style.display = "none";
+            }
+        });
+
+        if (searchBtn) {
+            searchBtn.addEventListener("click", () => {
+                const keyword = searchInput.value.toLowerCase().trim();
+                const found = allBooks.find(book =>
+                    book.title.toLowerCase() === keyword
+                );
+                if (found) openDetail(found.id);
+            });
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+})();

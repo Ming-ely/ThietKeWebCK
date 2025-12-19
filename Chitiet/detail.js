@@ -7,32 +7,39 @@
 function checkLoginStatus() {
     const token = localStorage.getItem("token");
     const username = localStorage.getItem("username");
-    const loginLink = document.getElementById("loginLink");
-    const registerLink = document.getElementById("registerLink");
+
+    const loginBtn = document.getElementById("loginBtn");
+    const registerBtn = document.getElementById("registerBtn");
+
     const userInfo = document.getElementById("userInfo");
-    const usernameSpan = document.getElementById("username");
+    const nameDisplay = document.getElementById("nameDisplay");
+
     const logoutBtn = document.getElementById("logoutBtn");
 
     if (token && username) {
         // Đã đăng nhập
-        loginLink.style.display = "none";
-        registerLink.style.display = "none";
-        userInfo.style.display = "inline";
-        usernameSpan.textContent = `👤 ${username}`;
+        if (loginBtn) loginBtn.style.display = "none";
+        if (registerBtn) registerBtn.style.display = "none";
 
-        // Xử lý nút đăng xuất
-        logoutBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            localStorage.removeItem("token");
-            localStorage.removeItem("username");
-            alert("Đã đăng xuất thành công!");
-            window.location.reload();
-        });
+        if (userInfo) userInfo.style.display = "inline-block";
+        if (nameDisplay) nameDisplay.textContent = username;
+
+        if (logoutBtn) {
+            logoutBtn.style.display = "inline-block";
+            logoutBtn.onclick = function (e) {
+                e.preventDefault();
+                localStorage.removeItem("token");
+                localStorage.removeItem("username");
+                alert("Đã đăng xuất thành công!");
+                window.location.reload();
+            };
+        }
     } else {
         // Chưa đăng nhập
-        loginLink.style.display = "inline";
-        registerLink.style.display = "inline";
-        userInfo.style.display = "none";
+        if (loginBtn) loginBtn.style.display = "inline-block";
+        if (registerBtn) registerBtn.style.display = "inline-block";
+        if (userInfo) userInfo.style.display = "none";
+        if (logoutBtn) logoutBtn.style.display = "none";
     }
 }
 

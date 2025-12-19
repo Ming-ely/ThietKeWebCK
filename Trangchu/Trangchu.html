@@ -32,13 +32,19 @@
     </header>
 
     <div class="search-bar">
-    <input id="searchInput" type="text" placeholder="Tìm kiếm sách, tác giả..." autocomplete="off">
-    <div id="suggestBox" class="suggest-box"></div>
+    <div class="search-wrapper">
+        <input id="searchInput" type="text" placeholder="Tìm kiếm sách, tác giả...">
+        <div id="suggestBox" class="suggest-box"></div>
+    </div>
 
-    <button id="searchBtn">Tìm kiếm</button>
-    <button id="menu-btn" class="menu-btn">☰</button>
+    <button id="searchBtn">
+        <i class="fas fa-search"></i> Tìm kiếm
+    </button>
+
+    <button id="menu-btn" class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
 </div>
-
 
     <div id="mega-menu" class="mega-menu">
         <h2>📚 Danh mục sách</h2>
@@ -187,13 +193,7 @@
 <script>
 const toggleBtn = document.getElementById("themeToggle");
 const body = document.body;
-
-
-
 </script>
-
-
-
-
+<script src="../common/search.js"></script>
 </body>
 </html>

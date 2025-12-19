@@ -1,8 +1,9 @@
 // =====================
-// LẤY LOẠI DANH MỤC TỪ URL
+// LẤY LOẠI DANH MỤC / SEARCH TỪ URL
 // =====================
 const params = new URLSearchParams(window.location.search);
 const type = params.get("type");
+const searchKeyword = params.get("search");
 
 // =====================
 // TÊN HIỂN THỊ TRÊN GIAO DIỆN
@@ -16,8 +17,14 @@ const CATEGORY_NAMES = {
     "thieu-nhi": "🧒 Sách Thiếu Nhi",
 };
 
-document.getElementById("category-title").textContent =
-    CATEGORY_NAMES[type] || "Danh mục sách";
+// ===== FIX TIÊU ĐỀ =====
+if (searchKeyword) {
+    document.getElementById("category-title").textContent =
+        `🔍 Kết quả tìm kiếm: "${searchKeyword}"`;
+} else {
+    document.getElementById("category-title").textContent =
+        CATEGORY_NAMES[type] || "Danh mục sách";
+}
 
 // =====================
 // LOAD book.json
@@ -25,11 +32,23 @@ document.getElementById("category-title").textContent =
 fetch("../Trangchu/book.json")
     .then(res => res.json())
     .then(data => {
-        const filtered = data.filter(book => book.category === type);
+
+        let filtered = [];
+
+if (searchKeyword && searchKeyword.trim() !== "") {
+    const keyword = searchKeyword.toLowerCase();
+
+    filtered = data.filter(book =>
+        book.title.toLowerCase().includes(keyword) ||
+        book.author.toLowerCase().includes(keyword)
+    );
+} else if (type) {
+    filtered = data.filter(book => book.category === type);
+}
 
         if (filtered.length === 0) {
             document.getElementById("category-grid").innerHTML =
-                "<p>Không có sách thuộc danh mục này.</p>";
+                "<p>Không có sách phù hợp.</p>";
             return;
         }
 
@@ -75,8 +94,9 @@ function renderGrid(list) {
 function openDetail(id) {
     window.location.href = `../Chitiet/detail.html?id=${id}`;
 }
+
 // =========================
-// SEARCH – FIX CUỐI CÙNG (HEADER LOAD ĐỘNG)
+// SEARCH – HEADER (KHÔNG ĐỤNG CODE CŨ)
 // =========================
 (function initCategorySearch() {
 
@@ -89,19 +109,16 @@ function openDetail(id) {
         const suggestBox = document.getElementById("suggestBox");
         const searchBtn = document.getElementById("searchBtn");
 
-        if (!searchInput || !suggestBox) return;
+        if (!searchInput || !suggestBox || !searchBtn) return;
 
         initialized = true;
         observer.disconnect();
-
-        console.log("✅ Search initialized (category)");
 
         let allBooks = [];
 
         fetch("../Trangchu/book.json")
             .then(res => res.json())
-            .then(data => allBooks = data)
-            .catch(err => console.error("Lỗi load book.json:", err));
+            .then(data => allBooks = data);
 
         searchInput.addEventListener("input", () => {
             const keyword = searchInput.value.toLowerCase().trim();
@@ -126,7 +143,7 @@ function openDetail(id) {
             }
 
             suggestBox.innerHTML = list.map(book => `
-                <div class="suggest-item" onclick="openDetail(${book.id})">
+                <a class="suggest-item" href="../Chitiet/detail.html?id=${book.id}">
                     <img src="../Trangchu/${book.image}">
                     <div class="suggest-info">
                         <b>${book.title}</b>
@@ -144,15 +161,19 @@ function openDetail(id) {
             }
         });
 
-        if (searchBtn) {
-            searchBtn.addEventListener("click", () => {
-                const keyword = searchInput.value.toLowerCase().trim();
-                const found = allBooks.find(book =>
-                    book.title.toLowerCase() === keyword
-                );
-                if (found) openDetail(found.id);
-            });
-        }
+        // ===== FIX NÚT TÌM KIẾM =====
+        searchBtn.addEventListener("click", () => {
+            const keyword = searchInput.value.trim();
+            if (!keyword) return;
+            window.location.href = `category.html?search=${encodeURIComponent(keyword)}`;
+        });
+
+        // ===== FIX ENTER =====
+        searchInput.addEventListener("keypress", e => {
+            if (e.key === "Enter") {
+                searchBtn.click();
+            }
+        });
     });
 
     observer.observe(document.body, {

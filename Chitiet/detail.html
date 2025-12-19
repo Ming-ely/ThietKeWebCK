@@ -6,26 +6,32 @@
   <title>Chi tiết sách</title>
   <link rel="stylesheet" href="../Trangchu/Trangchu.css">
   <link rel="stylesheet" href="detail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
 
   <header>
     <h1>BookStore</h1>
-    <nav>
-      <a href="../Trangchu/Trangchu.html">Trang chủ</a>
-     
-      <a href="../Giohang/cart.html" id="cartLink">Giỏ hàng</a>
+   <nav>
+  <a href="../Trangchu/Trangchu.html">Trang chủ</a>
+  <a href="../Giohang/cart.html" id="cartLink">Giỏ hàng</a>
 
-      <!-- Hiển thị nếu chưa đăng nhập -->
-      <a href="../loginregister/login.html" id="loginLink">Đăng nhập</a>
-      <a href="../loginregister/register.html" id="registerLink">Đăng ký</a>
+  <!-- Nút khi CHƯA đăng nhập -->
+  <a href="../loginregister/login.html" id="loginBtn">Đăng nhập</a>
+  <a href="../loginregister/register.html" id="registerBtn">Đăng ký</a>
 
-      <!-- Hiển thị nếu đã đăng nhập -->
-      <span id="userInfo" style="display: none;">
-        <span id="username"></span>
-        <a href="#" id="logoutBtn">Đăng xuất</a>
-      </span>
-    </nav>
+  <!-- Hiển thị khi ĐÃ đăng nhập -->
+  <span id="userInfo" style="display:none; font-weight:bold; color:white;">
+    <i class="fa-regular fa-face-smile"></i> Xin chào, 
+    <span id="nameDisplay"></span>!
+  </span>
+
+  <a href="#" id="logoutBtn" style="display:none; margin-left:10px; color:yellow; font-weight:bold;">
+    Đăng xuất
+  </a>
+</nav>
+
   </header>
 
   <main class="detail-container">

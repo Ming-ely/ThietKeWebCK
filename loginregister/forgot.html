@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quên mật khẩu</title>
+
+  <!-- Dùng lại CSS đang có -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="register.css">
+  <link rel="stylesheet" href="forgot.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Quên mật khẩu</h2>
+
+    <!-- BƯỚC 1: NHẬP TÊN ĐĂNG NHẬP -->
+    <div id="stepEmail">
+      <p>Nhập <b>tên đăng nhập</b> để nhận mã OTP (demo – không gửi thật).</p>
+
+      <!-- đổi id=email => username để khớp logic login -->
+      <input id="username" type="text" placeholder="Nhập tên đăng nhập (vd: Nguyen12)" required />
+      <button id="btnSendOtp">Gửi mã OTP</button>
+
+      <p class="hint">
+        <span>Bạn đã nhớ mật khẩu?</span>
+        <a href="login.html">Đăng nhập</a>
+      </p>
+    </div>
+
+    <!-- BƯỚC 2: NHẬP OTP + MẬT KHẨU MỚI -->
+    <div id="stepOtp" style="display:none;">
+      <p>Nhập mã OTP (demo) và đặt mật khẩu mới.</p>
+
+      <input id="otp" type="text" inputmode="numeric" placeholder="Nhập OTP (6 số)" maxlength="6" />
+      <input id="newPassword" type="password" placeholder="Mật khẩu mới" />
+      <input id="confirmPassword" type="password" placeholder="Nhập lại mật khẩu mới" />
+
+      <button id="btnVerify">Xác nhận</button>
+      <button id="btnBack" class="btn-secondary">Quay lại</button>
+
+      <p class="demo-otp" id="demoOtp" style="display:none;"></p>
+    </div>
+
+  </div>
+
+  <script src="forgot.js"></script>
+</body>
+</html>
